@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HW_6
 {
-    internal class Social : AppSystem
-    {
+    //internal class Social : AppSystem
+    //{
 
-    }
+    //}
 }
