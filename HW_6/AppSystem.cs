@@ -9,10 +9,10 @@ namespace HW_6
     internal abstract class AppSystem : IComparable<AppSystem>
     {
         private static uint serial;
-        protected uint serial_num;
-        protected string app_name;
-        protected double download_price;
-        protected DateTime download_date;
+        uint serial_num;
+        string app_name;
+        double download_price;
+        DateTime download_date;
         public AppSystem(string app_name, double download_price)
         {
             App_name = app_name;
@@ -20,7 +20,7 @@ namespace HW_6
             download_date = DateTime.Now;
             serial_num = ++Serial;
         }
-        protected static uint Serial { get => serial; set => serial = value; }
+        public static uint Serial { get => serial; set => serial = value; }
         public string App_name
         {
             get => app_name;
@@ -41,9 +41,12 @@ namespace HW_6
                 download_price = value;
             }
         }
+
+        public uint Serial_num { get => serial_num; }
+
         public override string ToString()
         {
-            return $"App Name: {App_name}\nApp Serial: {Serial}\nApp Price: {Download_price}\nDownload Date: {download_date}";
+            return $"\nApp Name: {App_name}\nApp Serial: {Serial}\nApp Price: {Download_price}\nDownload Date: {download_date}";
         }
         public abstract string AppSystemPurpose();
         public int CompareTo(AppSystem other)

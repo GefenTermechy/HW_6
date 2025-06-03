@@ -9,9 +9,12 @@ namespace HW_6
     internal class Navigation : AppSystem, IAppable
     {
         NavigationManager manager;
+
+        internal NavigationManager Manager { get => manager; set => manager = value; }
+
         public Navigation(string app_name, double download_price, NavigationManager manager) : base(app_name, download_price) 
         {
-            this.manager = manager;
+            this.Manager = manager;
         }
         public override string AppSystemPurpose()
         {
@@ -23,7 +26,7 @@ namespace HW_6
         }
         public void AddVAT(float vat)
         {
-            download_price += download_price * (12 / 100);
+            Download_price += Download_price * (vat / 100);
         }
     }
 }
